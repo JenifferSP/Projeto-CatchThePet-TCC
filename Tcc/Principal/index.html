@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Catch The Pet</title>
+</head>
+<body>
+     <!-- início do preloader -->
+     <div id="preloader">
+        <div class="inner">
+           <img src="background/gatoLoade.gif" alt="" srcset="">
+        </div>
+    </div>
+    <header>
+        
+        <nav id="menuHidden" class="menuHidden">
+        <ul>
+            <li><span  href="javascript:void(0)" class="btnClose" onclick="closeNav()">&times;</span></li>
+            <li><a href="" class="active">Home</a></li>
+            <li><a href="">Como usar</a></li>
+            <li><a href="">Sobre nos</a></li>
+            <li><a href="" style="border: none;">Onde esta meu pet</a></li>
+            <i style="font-size:24px" class="fa">&#xf08b;</i>
+        </ul>
+    </nav>
+        <span class="menu" id="menu"  onclick="openNav()">&#9776;</span>
+        
+    </header>
+       
+            
+      
+    <section>
+      
+        <div class="img-gif">
+            <img src="background/logoAnima.gif" alt="" id="planet" class="planet">
+        </div>
+        <img src="background/mountains_behind.png" alt="montanhas de tras" id="mountains_behind">
+        <h2 id="text">Catch <br/> The Pet</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="background/mountains_front.png" alt="montanhas da frente" id="mountains_front">
+
+        
+        <div class="map">
+             <div class="backgroun-perfil"><div class="icon-perfil"><img src="background/teste.png" ></div></div>
+             <div class="backgroun-perfil-name"><label for="">Paçoca</label></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.113270818912!2d-47.21240988556126!3d-22.87227374238946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b9576bd03a93%3A0xb652b12256f924!2sEtec%20-%20Escola%20T%C3%A9cnica%20Estadual%20de%20Hortol%C3%A2ndia!5e0!3m2!1spt-BR!2sbr!4v1668021868033!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+ 
+    <div class="sec" id="sec">
+        <h2>Sobre nos</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+             It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+             It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishin
+             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since
+              the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/>
+               It has survived not only five centuries, but also the leap into electronic typesetting, 
+               remaining essentially unchanged. It was popularised in the 1960s with the release of
+                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishinLorem 
+                Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                 when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries, but also the leap into electronic typesetting, 
+                  remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishin</p>
+    </div>
+    <script src="js/preloader.js"></script>
+    <script>
+        let planet = document.getElementById('planet');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header')
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            planet.style.top = value * 0.7 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.2 + 'px';
+            btn.style.marginTop = value * 1.5 +'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+
+        function openNav(){
+            document.getElementById("menuHidden").style.width="285px";
+            document.getElementById("menu").style.marginLeft="285px";
+            document.getElementById("menu").style.opacity="0";
+        }
+
+        function closeNav(){
+            document.getElementById("menuHidden").style.width="0";
+            document.getElementById("menu").style.marginLeft="0";
+            document.getElementById("menu").style.opacity="1";
+        }
+    </script>
+
+</body>
+</html>

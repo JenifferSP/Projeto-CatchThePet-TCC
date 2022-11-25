@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Inter:wght@100;200;300;400;500;600&family=Nunito&display=swap');
+
+
+/* ini: Preloader */
+ 
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#ffffff; /* cor do background que vai ocupar o body */
+    z-index:9999; /* z-index para jogar para frente e sobrepor tudo */
+}
+#preloader .inner {
+    position: absolute;
+    top: 50%; /* centralizar a parte interna do preload (onde fica a animação)*/
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}  
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, input{
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*animaçao fundo*/
+.gradient{
+    background: linear-gradient(45deg, #B9E0FF,rgb(81, 145, 182),#8D72E1,#6C4AB6);
+    background-size: 300% 300%;
+    animation: colors 15s ease infinite;
+}
+
+@keyframes colors{
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.icon-back{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    margin: 0.5rem 1.5rem;
+}
+.icon-back:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.box{
+    position: relative;
+    width: 100%;
+    max-width: 1090px;
+    height: 530px;
+    background-color: rgba(255, 255, 255, 0.747);
+    border-radius: 5px 45px;
+    box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+    
+}
+
+.inner-box{
+    position: absolute;
+    width: calc(100% - 4.1rem);
+    height: calc(100% - 4.1rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.forms-wrap{
+    position: absolute;
+    height: 100%;
+    width: 45%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    transition: 0.8s ease-in-out;
+}
+
+form{
+    max-width: 260px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
+    flex-direction: column;
+    justify-content: space-evenly;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    transition: opacity 0.02s 0.4s;
+}
+
+form.sing-up-form{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 47px;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+}
+
+.logo h4{
+    font-size: 1.1rem;
+    margin-top: -9px;
+    letter-spacing: 0.9px;
+    color: #ff8a0c;
+    text-transform: uppercase;
+}
+
+.heading{
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading h2{
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+.heading h2::after{
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: rgb(35, 101, 139);
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+
+.login-button{
+    display: flex;
+    align-items: center;
+    width: 36%;
+}
+
+.login-button button{
+    border: none;
+    background-color: rgb(245, 184, 72);
+    box-shadow: 0px 10px 40px -12px rgb(255, 201, 101);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button:hover{
+    background-color: rgb(246, 192, 91) ;
+    transition: 0.5s;
+    transform: scale(1.05);
+}  
+
+.login-button button a{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: rgb(81, 145, 182);
+}
+
+
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+    width: 36vw;
+}
+.textarea{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background:rgb(187, 227, 250) ;
+    box-shadow: 0px 10px 40px rgba(2, 2, 37, 0.205);
+    width: 36vw;
+}
+
+.textarea:focus-visible{
+    outline: 1px solid  rgb(35, 101, 139);
+}
+
+.textarea:hover{
+    background-color: rgb(156, 206, 238);
+    transition: 0.5s;
+}
+
+.input-wrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrap input{
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background:rgb(187, 227, 250) ;
+    box-shadow: 0px 10px 40px rgba(2, 2, 37, 0.205);
+}
+
+.input-wrap input:hover{
+    background-color: rgb(156, 206, 238);
+    transition: 0.5s;
+}
+
+.input-wrap input:focus-visible{
+    outline: 1px solid  rgb(35, 101, 139);
+}
+
+.input-wrap label,
+.gender-title h6{
+    font-size: 0.75rem;
+    font-weight:600;
+    color:#000000c0;
+}
+
+.input-wrap input::placeholder{
+    color:rgba(0, 66, 104, 0.486);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 24px rgb(156, 206, 238) inset;
+}
+
+.textarea::placeholder{
+    color:rgba(0, 66, 104, 0.486);
+    font-family: 'Inter', sans-serif;
+}
+
+.gender-inputs input[type='radio']{
+    z-index: 9;
+    margin-right: 10px;
+    opacity: 0;
+}
+
+.gender-inputs .check{
+    margin-right: 10px;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgb(35, 101, 139);
+}
+
+.gender-inputs .check::after{
+    content: '\f1b0';
+    font-family: fontAwesome;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: scale(0);
+    transition: 0.5s;
+    color:#ff8a0c;
+}
+
+.gender-input .ativo:checked ~ .check::after{
+    transform: scale(1);
+}
+.gender-group{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 0.5rem;
+}
+
+.genderPet{
+    position:relative;
+    margin-top: 22px;
+}
+
+
+
+.gender-input{
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input{
+    margin-right: 0.35rem;
+}
+
+.gender-input label{
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.sing-btn{
+    position: absolute;
+    width: 100%;
+    margin-top: 2rem;
+    border: none;
+    background-color: rgb(245, 184, 72);
+    box-shadow: 0px 10px 40px -12px rgb(255, 201, 101);
+    letter-spacing: 3px;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: rgb(81, 145, 182);
+    text-align: center;
+    text-decoration: none;
+}
+
+.sing-btn:hover{
+    background-color: rgb(246, 192, 91) ;
+    transition: 0.5s;
+    transform: scale(1.05);
+    color: rgb(110, 166, 199);  ;
+}
+
+.text{
+    position: relative;
+    color: #353535;
+    bottom: 0;
+    font-size: 0.7rem;
+    margin-left: 4%;
+    margin-top: 16%;
+
+}
+
+.text a{
+    text-decoration: none;
+    color: rgb(92, 24, 201);
+    transition: 0.3s;
+    
+}
+.text a:hover{
+    color: rgb(206, 176, 255);
+}
+
+/*efeito JS*/
+main.sing-up-mode form.sing-in-form{
+    opacity: 0;
+    pointer-events: none;
+}
+
+main.sing-up-mode form.sing-up-form{
+    opacity: 1;
+    pointer-events: all;
+}
+
+main.sing-up-mode .forms-wrap{
+    left: 55%;
+}
+
+
+main.sing-up-mode .img{
+    left: -7% ;
+}
+
+.Remove{
+    opacity: 0;
+    transition: 0.7s;
+}
+
+.Show{
+    opacity:1;
+    transition: 0.7s;
+}
+
+
+/*Card*/
+
+.img{
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    top: 0;
+    left: 51%;
+    transition: 0.8s ease-in-out;
+}
+
+.imgPerfil, .imgP{
+    height: 8rem;
+    position: absolute;
+}
+
+.img-card{
+    position: relative;
+    right: 3%;
+}
+
+.img-selo{
+     width: 50px;
+     height: 50px;
+     float: right;
+     position: relative;
+     top: 9rem;
+}
+
+.form-card{
+    width: 28rem;
+    height: 15rem;
+    padding: 2rem;
+    background-color: rgb(240, 220, 191);
+    margin: 4rem;
+    margin-top: 10rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0, .212);
+}
+
+.infor-card{
+    float:right;
+    font-size: 15px;
+    position: absolute;
+    left: 14rem;
+    color:rgba(0,0,0, .517);
+    width: 18rem;
+    margin-top: -9px  ;
+    overflow: auto;
+    vertical-align: middle;
+}
+
+.infor-card
+.value{
+    float: left;
+    margin-left: 4%;
+    padding: 29px 0;
+    margin-top: -20px;
+    font-family: 'Fuzzy Bubbles' !important;
+}
+
+#_nameP{
+    width: 45%;  
+}
+
+#_racaP{
+    width: 90%;
+}
+#_SexoP{
+    width: 70%;
+}
+
+
+#_name{
+    width: 45%;  
+}
+
+#_email{
+    width: 90%;
+}
+#_num{
+    width: 70%;
+}
+
+
+
